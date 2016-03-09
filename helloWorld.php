@@ -7,13 +7,15 @@ Author: Mansouri Najeh
 Author URI: http://www.njh.com
 Version: 1.0
 */
-// This just echoes hello world
-function hello_wd()
+add_action('admin_menu', 'myfirstplugin_admin_actions');
+function myfirstplugin_admin_actions()
 {
-	$h = "hello world";
-	echo "<p id='hw'>$h</p>";
+add_options_page('MyFirstPlugin', 'MyFirstPlugin', 'manage_options',__FILE__, 'hello_wd');
+} 
+// This just echoes hello world
+function hello_wd() 
+{
+	echo "<h1>hello world</h1>";
 }
-
-add_action( 'admin_notices', 'hello_wd' );
 
 ?>
